@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+ @theme {
+  --color-on-secondary-fixed-variant: #3b475b;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #051a3e;
+  --color-inverse-surface: #1d3054;
+  --color-on-tertiary: #ffffff;
+  --color-on-surface-variant: #434654;
+  --color-tertiary-fixed: #d7e2ff;
+  --color-outline: #737685;
+  --color-on-tertiary-container: #bfd3ff;
+  --color-on-primary-fixed-variant: #0040a2;
+  --color-surface-container: #e9edff;
+  --color-error: #ba1a1a;
+  --color-surface-tint: #0c56d0;
+  --color-on-primary-fixed: #001848;
+  --color-secondary-container: #d4e0f8;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-highest: #d8e2ff;
+  --color-on-secondary-fixed: #101c2d;
+  --color-primary: #003d9b;
+  --color-surface-variant: #d8e2ff;
+  --color-tertiary-container: #0058b6;
+  --color-surface-container-low: #f1f3ff;
+  --color-on-tertiary-fixed-variant: #004590;
+  --color-secondary: #535f73;
+  --color-surface: #faf9ff;
+  --color-surface-container-high: #e1e8ff;
+  --color-surface-bright: #faf9ff;
+  --color-outline-variant: #c3c6d6;
+  --color-secondary-fixed: #d7e3fb;
+  --color-on-background: #051a3e;
+  --color-background: #faf9ff;
+  --color-on-primary-container: #c4d2ff;
+  --color-primary-container: #0052cc;
+  --color-primary-fixed: #dae2ff;
+  --color-tertiary-fixed-dim: #abc7ff;
+  --color-on-tertiary-fixed: #001b3f;
+  --color-on-primary: #ffffff;
+  --color-secondary-fixed-dim: #bbc7de;
+  --color-tertiary: #00418a;
+  --color-primary-fixed-dim: #b2c5ff;
+  --color-surface-dim: #ccdaff;
+  --color-inverse-on-surface: #edf0ff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-on-secondary-container: #576377;
+  --color-inverse-primary: #b2c5ff;
+  --color-on-error: #ffffff;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --spacing-xxl: 48px;
+  --spacing-lg: 24px;
+  --spacing-unit: 4px;
+  --spacing-gutter: 24px;
+  --spacing-xl: 32px;
+  --spacing-md: 16px;
+  --spacing-xs: 4px;
+  --spacing-margin: 32px;
+  --spacing-sm: 8px;
+
+  --font-headline-sm: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-headline-lg-mobile: "Inter", sans-serif;
+  --font-headline-md: "Inter", sans-serif;
+  --font-caption: "Inter", sans-serif;
+  --font-headline-lg: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--font-weight: 600;
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-caption--font-weight: 400;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 600;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+}
+ 
+
+ body {
+  font-family: "Inter", sans-serif;
+  background-color: #faf9ff;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.input-focus-ring:focus {
+  border-color: #4c9aff;
+  outline: none;
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.side-nav-active {
+  background-color: #0052cc;
+  color: #ffffff;
+  border-left: 4px solid #003d9b;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.login-card-shadow {
+  box-shadow: 0px 1px 3px rgba(9, 30, 66, 0.13), 0px 8px 16px -4px rgba(9, 30, 66, 0.08);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
