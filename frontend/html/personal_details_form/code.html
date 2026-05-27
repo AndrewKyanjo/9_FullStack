@@ -1,0 +1,650 @@
+<!doctype html>
+
+<html class="light" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>UserPortal - Data Entry</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-secondary-fixed-variant": "#3b475b",
+                            "surface-container-lowest": "#ffffff",
+                            "on-surface": "#051a3e",
+                            "inverse-surface": "#1d3054",
+                            "on-tertiary": "#ffffff",
+                            "on-surface-variant": "#434654",
+                            "tertiary-fixed": "#d7e2ff",
+                            outline: "#737685",
+                            "on-tertiary-container": "#bfd3ff",
+                            "on-primary-fixed-variant": "#0040a2",
+                            "surface-container": "#e9edff",
+                            error: "#ba1a1a",
+                            "surface-tint": "#0c56d0",
+                            "on-primary-fixed": "#001848",
+                            "secondary-container": "#d4e0f8",
+                            "on-secondary": "#ffffff",
+                            "surface-container-highest": "#d8e2ff",
+                            "on-secondary-fixed": "#101c2d",
+                            primary: "#003d9b",
+                            "surface-variant": "#d8e2ff",
+                            "tertiary-container": "#0058b6",
+                            "surface-container-low": "#f1f3ff",
+                            "on-tertiary-fixed-variant": "#004590",
+                            secondary: "#535f73",
+                            surface: "#faf9ff",
+                            "surface-container-high": "#e1e8ff",
+                            "surface-bright": "#faf9ff",
+                            "outline-variant": "#c3c6d6",
+                            "secondary-fixed": "#d7e3fb",
+                            "on-background": "#051a3e",
+                            background: "#faf9ff",
+                            "on-primary-container": "#c4d2ff",
+                            "primary-container": "#0052cc",
+                            "primary-fixed": "#dae2ff",
+                            "tertiary-fixed-dim": "#abc7ff",
+                            "on-tertiary-fixed": "#001b3f",
+                            "on-primary": "#ffffff",
+                            "secondary-fixed-dim": "#bbc7de",
+                            tertiary: "#00418a",
+                            "primary-fixed-dim": "#b2c5ff",
+                            "surface-dim": "#ccdaff",
+                            "inverse-on-surface": "#edf0ff",
+                            "error-container": "#ffdad6",
+                            "on-error-container": "#93000a",
+                            "on-secondary-container": "#576377",
+                            "inverse-primary": "#b2c5ff",
+                            "on-error": "#ffffff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.25rem",
+                            lg: "0.5rem",
+                            xl: "0.75rem",
+                            full: "9999px",
+                        },
+                        spacing: {
+                            xxl: "48px",
+                            lg: "24px",
+                            unit: "4px",
+                            gutter: "24px",
+                            xl: "32px",
+                            md: "16px",
+                            xs: "4px",
+                            margin: "32px",
+                            sm: "8px",
+                        },
+                        fontFamily: {
+                            "headline-sm": ["Inter"],
+                            "label-md": ["Inter"],
+                            "headline-lg-mobile": ["Inter"],
+                            "headline-md": ["Inter"],
+                            caption: ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "label-sm": ["Inter"],
+                            "body-md": ["Inter"],
+                        },
+                        fontSize: {
+                            "headline-sm": [
+                                "20px",
+                                { lineHeight: "28px", fontWeight: "600" },
+                            ],
+                            "label-md": [
+                                "14px",
+                                { lineHeight: "20px", fontWeight: "600" },
+                            ],
+                            "headline-lg-mobile": [
+                                "24px",
+                                {
+                                    lineHeight: "32px",
+                                    letterSpacing: "-0.01em",
+                                    fontWeight: "700",
+                                },
+                            ],
+                            "headline-md": [
+                                "24px",
+                                {
+                                    lineHeight: "32px",
+                                    letterSpacing: "-0.01em",
+                                    fontWeight: "600",
+                                },
+                            ],
+                            caption: [
+                                "12px",
+                                { lineHeight: "16px", fontWeight: "400" },
+                            ],
+                            "headline-lg": [
+                                "32px",
+                                {
+                                    lineHeight: "40px",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "700",
+                                },
+                            ],
+                            "body-lg": [
+                                "16px",
+                                { lineHeight: "24px", fontWeight: "400" },
+                            ],
+                            "label-sm": [
+                                "12px",
+                                {
+                                    lineHeight: "16px",
+                                    letterSpacing: "0.02em",
+                                    fontWeight: "600",
+                                },
+                            ],
+                            "body-md": [
+                                "14px",
+                                { lineHeight: "20px", fontWeight: "400" },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #faf9ff;
+            }
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .input-focus-ring:focus {
+                border-color: #4c9aff;
+                outline: none;
+                box-shadow: none;
+                border-width: 2px;
+            }
+            .side-nav-active {
+                background-color: #0052cc;
+                color: #ffffff;
+                border-left: 4px solid #003d9b;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+            }
+        </style>
+    </head>
+    <body class="bg-background text-on-background min-h-screen flex">
+        <!-- SideNavBar -->
+        <aside
+            class="h-screen w-64 fixed left-0 top-0 z-50 bg-on-surface flex flex-col py-lg shadow-lg hidden md:flex"
+        >
+            <div class="px-gutter mb-xl">
+                <h1
+                    class="font-headline-sm text-headline-sm text-surface-container-lowest"
+                >
+                    Enterprise Portal
+                </h1>
+                <p class="font-caption text-caption text-surface-variant">
+                    Management Console
+                </p>
+            </div>
+            <nav class="flex-1 px-sm space-y-xs">
+                <a
+                    class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-surface-variant hover:text-surface-bright hover:bg-secondary-container/10 transition-all duration-200 ease-in-out"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+                <a
+                    class="flex items-center gap-md px-md py-sm font-label-md text-label-md bg-primary-container text-on-primary-container border-l-4 border-primary rounded-r-lg transition-all duration-200 ease-in-out"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">person</span>
+                    My Profile
+                </a>
+                <a
+                    class="flex items-center gap-md px-md py-sm font-label-md text-label-md text-surface-variant hover:text-surface-bright hover:bg-secondary-container/10 transition-all duration-200 ease-in-out"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+            </nav>
+            <div
+                class="mt-auto px-gutter border-t border-outline-variant/20 pt-md"
+            >
+                <div class="flex items-center gap-sm">
+                    <img
+                        alt="User Profile"
+                        class="w-8 h-8 rounded-full bg-surface-container"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbjcIpfjA4nib-1c9eCF0oYn3fUq-Khcqp5aI8qW8cZntyV9eOaTfo_vCt0QwpgoI5jFe2AGXOV4KfGuGaQCLvchqzub7r6ToY1T-Zf6Bf2E8HFJOBeBCQQL_7OQqde0Kr31-aPbgMLNq3-wb9-UET0PVV3mRaZUY2dABM5lvSOMlO40TvO2TONwHvWoMsKIOcQCy9sF6d54X5T4vp0Dm9r9Jr3U6aX8Dt3u1EAiK75ltW1BXYGlSKND_v7DfHUL5OEh11wTOJIw2s"
+                    />
+                    <div class="overflow-hidden">
+                        <p
+                            class="font-label-sm text-label-sm text-surface-container-lowest truncate"
+                        >
+                            Alex Sterling
+                        </p>
+                        <p
+                            class="font-caption text-caption text-surface-variant truncate"
+                        >
+                            Admin Access
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Wrapper -->
+        <div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+            <!-- TopAppBar -->
+            <header
+                class="w-full sticky top-0 z-40 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center h-16 px-gutter"
+            >
+                <div class="flex items-center gap-md">
+                    <span
+                        class="font-headline-md text-headline-md font-bold text-primary"
+                        >UserPortal</span
+                    >
+                </div>
+                <div class="flex items-center gap-xl">
+                    <div class="relative hidden sm:block">
+                        <span
+                            class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline"
+                            >search</span
+                        >
+                        <input
+                            class="pl-xl pr-md py-xs bg-surface-container-low border border-outline-variant rounded-lg text-body-md font-body-md w-64 focus:border-primary focus:ring-0"
+                            placeholder="Search..."
+                            type="text"
+                        />
+                    </div>
+                    <div class="flex items-center gap-md">
+                        <button
+                            class="material-symbols-outlined text-secondary hover:bg-surface-container-low p-xs rounded-full transition-colors cursor-pointer"
+                        >
+                            notifications
+                        </button>
+                        <button
+                            class="material-symbols-outlined text-secondary hover:bg-surface-container-low p-xs rounded-full transition-colors cursor-pointer"
+                        >
+                            help
+                        </button>
+                        <img
+                            alt="User profile avatar"
+                            class="w-8 h-8 rounded-full border border-outline-variant"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW9k6t_YkLHLGxb6-D0eJ846GsOksQ36vzIYdg_pmQIlpCxsM_XOpBjHHHVZ4EuVCVJtU_XRH6hCI319VRGENwd3qwMYDj89kL0MExnXaHuwUma6LvoDKKktg9HJptQEkyOT1k-j6bB8L1hf1f-QeSKGuD1DFkxwmxAbfBhaMAZS-aXCjdCTbvh_MhNmiwD_V0zgjHC42RU_2P96mvePgiAKZ2AbOlliJcZlUv0M3eWww-VMQtFHl5VGq_dDb_Yj2X56s65LTK6HZw"
+                        />
+                    </div>
+                </div>
+            </header>
+            <!-- Main Content Area -->
+            <main class="flex-1 p-gutter max-w-5xl mx-auto w-full">
+                <div class="mb-xl">
+                    <h2
+                        class="font-headline-lg text-headline-lg text-on-surface mb-xs"
+                    >
+                        Profile Data Entry
+                    </h2>
+                    <p class="font-body-lg text-body-lg text-secondary">
+                        Complete the information below to update your enterprise
+                        profile records.
+                    </p>
+                </div>
+                <form
+                    class="space-y-lg"
+                    onsubmit="
+                        event.preventDefault();
+                        alert('Profile Updated Successfully');
+                    "
+                >
+                    <!-- Section: Personal Info -->
+                    <section
+                        class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm overflow-hidden"
+                    >
+                        <div
+                            class="px-lg py-md border-b border-outline-variant bg-surface-container-low"
+                        >
+                            <h3
+                                class="font-headline-sm text-headline-sm text-on-surface"
+                            >
+                                Personal Info
+                            </h3>
+                        </div>
+                        <div
+                            class="p-lg grid grid-cols-1 md:grid-cols-2 gap-lg"
+                        >
+                            <!-- Full Name -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Full Name</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="e.g. Johnathan Doe"
+                                    type="text"
+                                />
+                            </div>
+                            <!-- Date of Birth -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Date of Birth</label
+                                >
+                                <div class="relative">
+                                    <input
+                                        class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring appearance-none"
+                                        type="date"
+                                    />
+                                    <span
+                                        class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                                        >calendar_today</span
+                                    >
+                                </div>
+                            </div>
+                            <!-- Gender -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Gender</label
+                                >
+                                <div class="flex items-center gap-xl py-sm">
+                                    <label
+                                        class="flex items-center gap-sm cursor-pointer"
+                                    >
+                                        <input
+                                            class="text-primary focus:ring-primary w-4 h-4"
+                                            name="gender"
+                                            type="radio"
+                                            value="male"
+                                        />
+                                        <span class="font-body-md text-body-md"
+                                            >Male</span
+                                        >
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-sm cursor-pointer"
+                                    >
+                                        <input
+                                            class="text-primary focus:ring-primary w-4 h-4"
+                                            name="gender"
+                                            type="radio"
+                                            value="female"
+                                        />
+                                        <span class="font-body-md text-body-md"
+                                            >Female</span
+                                        >
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-sm cursor-pointer"
+                                    >
+                                        <input
+                                            class="text-primary focus:ring-primary w-4 h-4"
+                                            name="gender"
+                                            type="radio"
+                                            value="other"
+                                        />
+                                        <span class="font-body-md text-body-md"
+                                            >Other</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Marital Status -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Marital Status</label
+                                >
+                                <select
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring bg-surface-container-lowest"
+                                >
+                                    <option value="">Select status...</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                            <!-- Occupation -->
+                            <div class="flex flex-col gap-xs md:col-span-2">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Occupation / Job Title</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="e.g. Senior Software Architect"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Contact Details -->
+                    <section
+                        class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm overflow-hidden"
+                    >
+                        <div
+                            class="px-lg py-md border-b border-outline-variant bg-surface-container-low"
+                        >
+                            <h3
+                                class="font-headline-sm text-headline-sm text-on-surface"
+                            >
+                                Contact Details
+                            </h3>
+                        </div>
+                        <div
+                            class="p-lg grid grid-cols-1 md:grid-cols-2 gap-lg"
+                        >
+                            <!-- Email Address -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Email Address</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="name@company.com"
+                                    type="email"
+                                />
+                            </div>
+                            <!-- Phone Number -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Phone Number</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="+1 (555) 000-0000"
+                                    type="tel"
+                                />
+                            </div>
+                            <!-- Street Address -->
+                            <div class="flex flex-col gap-xs md:col-span-2">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Street Address</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="123 Corporate Blvd, Ste 400"
+                                    type="text"
+                                />
+                            </div>
+                            <!-- City -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >City</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="San Francisco"
+                                    type="text"
+                                />
+                            </div>
+                            <!-- Postal Code -->
+                            <div class="flex flex-col gap-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant"
+                                    >Postal Code</label
+                                >
+                                <input
+                                    class="w-full border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md input-focus-ring"
+                                    placeholder="94105"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Action Buttons -->
+                    <div class="flex justify-end items-center gap-md pt-md">
+                        <button
+                            class="px-xl py-sm rounded-lg font-label-md text-label-md text-secondary bg-surface-container-low hover:bg-surface-container-high transition-colors"
+                            type="button"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            class="px-xl py-sm rounded-lg font-label-md text-label-md text-on-primary bg-primary-container shadow-md hover:opacity-90 active:scale-[0.98] transition-all"
+                            type="submit"
+                        >
+                            Save Profile Changes
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-xxl grid grid-cols-1 md:grid-cols-3 gap-lg">
+                    <div
+                        class="p-lg bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col items-center text-center"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[32px] mb-sm"
+                            >security</span
+                        >
+                        <h4 class="font-label-md text-label-md mb-xs">
+                            Data Privacy
+                        </h4>
+                        <p class="font-caption text-caption text-secondary">
+                            Your data is encrypted using enterprise-grade
+                            protocols and stored in a secure vault.
+                        </p>
+                    </div>
+                    <div
+                        class="p-lg bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col items-center text-center"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[32px] mb-sm"
+                            >sync</span
+                        >
+                        <h4 class="font-label-md text-label-md mb-xs">
+                            Real-time Sync
+                        </h4>
+                        <p class="font-caption text-caption text-secondary">
+                            Changes made here are instantly reflected across all
+                            connected SaaS modules.
+                        </p>
+                    </div>
+                    <div
+                        class="p-lg bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col items-center text-center"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[32px] mb-sm"
+                            >history</span
+                        >
+                        <h4 class="font-label-md text-label-md mb-xs">
+                            Audit Logs
+                        </h4>
+                        <p class="font-caption text-caption text-secondary">
+                            A full history of modifications is maintained for
+                            organizational compliance.
+                        </p>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer
+                class="w-full py-md mt-auto bg-surface-container-low border-t border-outline-variant"
+            >
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center px-margin max-w-7xl mx-auto w-full"
+                >
+                    <div
+                        class="font-label-sm text-label-sm font-semibold text-secondary mb-sm md:mb-0"
+                    >
+                        © 2024 Enterprise SaaS Inc.
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-lg">
+                        <a
+                            class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4"
+                            href="#"
+                            >Privacy Policy</a
+                        >
+                        <a
+                            class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4"
+                            href="#"
+                            >Terms of Service</a
+                        >
+                        <a
+                            class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4"
+                            href="#"
+                            >Security</a
+                        >
+                        <a
+                            class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4"
+                            href="#"
+                            >Cookie Settings</a
+                        >
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Decorative Gradient Mesh for High-End Feel -->
+        <div class="fixed top-0 right-0 -z-10 opacity-10 pointer-events-none">
+            <div
+                class="w-[600px] h-[600px] bg-gradient-to-br from-primary via-tertiary to-transparent rounded-full blur-[100px]"
+            ></div>
+        </div>
+        <script>
+            // Micro-interactions
+            document.querySelectorAll("input, select").forEach((element) => {
+                element.addEventListener("focus", () => {
+                    element.parentElement
+                        .querySelector("label")
+                        ?.classList.add("text-primary");
+                });
+                element.addEventListener("blur", () => {
+                    element.parentElement
+                        .querySelector("label")
+                        ?.classList.remove("text-primary");
+                });
+            });
+
+            // Simple form validation styling logic
+            const form = document.querySelector("form");
+            form.addEventListener("submit", (e) => {
+                const inputs = form.querySelectorAll("input[required]");
+                inputs.forEach((input) => {
+                    if (!input.value) {
+                        input.classList.add("border-error");
+                    } else {
+                        input.classList.remove("border-error");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
